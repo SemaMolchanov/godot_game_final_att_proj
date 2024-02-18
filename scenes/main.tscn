@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b22qsjojo66kp"]
+
+[ext_resource type="PackedScene" uid="uid://3hoqijag6xch" path="res://assets/sprites/character/char.tscn" id="1_cusy8"]
+[ext_resource type="PackedScene" uid="uid://phn2tatoney4" path="res://assets/sprites/NPCs/npc.tscn" id="2_ewc73"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(3, 0)
+
+[node name="Sprite2D" parent="." instance=ExtResource("1_cusy8")]
+
+[node name="Sprite2D2" parent="." instance=ExtResource("2_ewc73")]
