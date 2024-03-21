@@ -1,25 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm28xy2tyduoj"]
+[gd_scene load_steps=8 format=3 uid="uid://b22qsjojo66kp"]
 
-[ext_resource type="Script" path="res://scripts/scenes_script.gd" id="1_6lh1y"]
-[ext_resource type="FontFile" uid="uid://bucrwrok0xcgp" path="res://assets/fonts/ThaleahFat_TTF.ttf" id="1_8th3q"]
-[ext_resource type="Script" path="res://scripts/Continue Button.gd" id="2_3ot1a"]
-[ext_resource type="Script" path="res://scripts/Quit Game Button.gd" id="3_j13l8"]
+[ext_resource type="FontFile" uid="uid://bucrwrok0xcgp" path="res://assets/fonts/ThaleahFat_TTF.ttf" id="1_7bshy"]
+[ext_resource type="Script" path="res://scripts/New Game Button.gd" id="2_adw73"]
+[ext_resource type="Script" path="res://scripts/Exit Game Button.gd" id="3_0vb84"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bavqp"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fmgp"]
 bg_color = Color(0.835294, 0.780392, 0.227451, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vkh2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2x0hw"]
 bg_color = Color(0.603922, 0.764706, 0.34902, 0.909804)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e87p7"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogn3i"]
 bg_color = Color(0.45098, 0.760784, 0.313726, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vped1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjwk3"]
 bg_color = Color(0.835294, 0.780392, 0.227451, 1)
 
-[node name="PauseMenu" type="Node2D"]
-process_mode = 2
-script = ExtResource("1_6lh1y")
+[node name="MainMenu" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1280.0
@@ -40,9 +37,9 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_8th3q")
+theme_override_fonts/font = ExtResource("1_7bshy")
 theme_override_font_sizes/font_size = 125
-text = "Paused"
+text = "Return to Monkey"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -56,37 +53,37 @@ layout_mode = 2
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_right = 100
 
-[node name="Continue Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+[node name="New Game Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.996078, 0.996078, 0.996078, 1)
 theme_override_colors/font_pressed_color = Color(0.996078, 0.996078, 0.996078, 1)
 theme_override_colors/font_hover_color = Color(0.992157, 0.992157, 0.992157, 1)
-theme_override_fonts/font = ExtResource("1_8th3q")
+theme_override_fonts/font = ExtResource("1_7bshy")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_bavqp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7vkh2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_e87p7")
-text = "Continue"
-script = ExtResource("2_3ot1a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2fmgp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2x0hw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ogn3i")
+text = "New Game"
+script = ExtResource("2_adw73")
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_right = 100
 
-[node name="Quit Game Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
+[node name="Exit Game Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.996078, 0.996078, 0.996078, 1)
 theme_override_colors/font_pressed_color = Color(0.996078, 0.996078, 0.996078, 1)
 theme_override_colors/font_hover_color = Color(0.996078, 0.996078, 0.996078, 1)
-theme_override_fonts/font = ExtResource("1_8th3q")
+theme_override_fonts/font = ExtResource("1_7bshy")
 theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_vped1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7vkh2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_e87p7")
-text = "Quit Game
+theme_override_styles/normal = SubResource("StyleBoxFlat_hjwk3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2x0hw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ogn3i")
+text = "Exit Game
 "
-script = ExtResource("3_j13l8")
+script = ExtResource("3_0vb84")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Continue Button" to="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Continue Button" method="_on_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Quit Game Button" to="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Quit Game Button" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/New Game Button" to="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/New Game Button" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Exit Game Button" to="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Exit Game Button" method="_on_pressed"]
